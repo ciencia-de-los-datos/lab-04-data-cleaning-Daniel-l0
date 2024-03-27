@@ -36,7 +36,7 @@ def clean_data():
     df['monto_del_credito'] = pd.to_numeric(df['monto_del_credito'], errors='coerce')
     df["idea_negocio"] = df["idea_negocio"].str.replace("_", " ")
     df["barrio"] = df["barrio"].str.replace("_", " ")
-    df['idea_negocio'] = df['idea_negocio'].apply(limpiar_texto)
+    df['idea_negocio'] = df['idea_negocio'].str.replace("-", " ")
     df["barrio"] = df["barrio"].str.replace("-", " ")
     df['línea_credito'] = df['línea_credito'].str.replace("_", " ")
     df['línea_credito'] = df['línea_credito'].str.replace("-", " ")
